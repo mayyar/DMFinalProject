@@ -1,0 +1,36 @@
+﻿random forest的實驗說明
+選用random forest之理由：
+	比較用
+流程：
+	0. 字串轉換為數字，方法有
+		a. 直接將字串feature轉為實數
+		b. one hot encoding
+		c. one hot encoding on all except target value
+			yearOfRegistration每20年1組
+			powerPS依大小分成群組大小相同的10個
+	1. 切資料(train:test=7:3)
+		依target value排序後，每10筆資料依照
+		train, test, train, train, test, train, train, test, train, train
+		之順序依序分割
+	2. 將target value離散化，方法有： (-normal版的classifier部分)
+		a. 取固定數值為區間做分割
+		b. 取固定分類數做每個類別相同大小的分割
+		c. 取floor到most significant bit (2的冪次) - 因為是人出價，兩個大數字中，差了10%也不太有感覺，例如 "價格1萬"對比"價格1萬1千" 和 "價格1千萬"對比"價格1千1百萬"。然而從結果來看，"價格1萬"對比"價格1萬5千"顯然是有差的，但選用2的冪次會將其規為同一類，分類效果不彰
+	3. 丟進模型，模型有：
+		-normal版 random forest
+			classifier
+			regressor - 未將target value離散化
+		-ec演化計算調參數版 random forest regressor
+			參數太多不會調，反正人調也是亂調，不如交給電腦亂調
+			- 只使用 0a, 不使用 0b, 0c
+			- 變動的參數有: max_features, bootstrap, min_samples_split, min_samples_leaf, min_weight_fraction_leaf, min_impurity_decrease, max_depth
+				詳細調整方法-突變
+					float type: 將實數軸映射到接受的區間，每次加上一個區間在[-y,y)的隨機數值(實驗中y=1111)
+					category type: 將選項們組成有向單環圖，要突變時選擇下一個
+				調整方法-交配
+					每個參數隨機從兩個隨機選定的個體選取
+			- 經觀察確實可以讓MSE減少，但依然很大。
+			- 隨機搜尋的值域中不含預設值，效果不比全部參數使用預設值加
+		-此外，透過演化計算與工人智慧的合作，0a方法的MSE減少, 但其他兩者的MSE上升
+			- 重點在於有訓練過的 0a 方法的MSE比起預設值的結果還要小，而人類的負擔非常少(實驗中只改了一個顯而易見的'bootstrap'參數)
+

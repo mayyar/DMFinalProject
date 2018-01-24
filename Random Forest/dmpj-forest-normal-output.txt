@@ -1,0 +1,540 @@
+count of unique values for each column
+                  price        int64         5030
+            vehicleType       object            8
+     yearOfRegistration        int64           84
+                gearbox       object            2
+                powerPS        int64          568
+                  model       object          250
+              kilometer        int64           13
+    monthOfRegistration        int64           13
+               fuelType       object            7
+                  brand       object           39
+      notRepairedDamage       object            2
+total:247367
+
+onehot encoding
+price
+vehicleType
+yearOfRegistration
+gearbox
+powerPS
+model
+kilometer
+monthOfRegistration
+fuelType
+brand
+notRepairedDamage
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 247367 entries, 0 to 247366
+Columns: 313 entries, price to notRepairedDamage-nein
+dtypes: float64(5), uint8(308)
+memory usage: 82.1 MB
+
+onehot encoding all
+vehicleType
+yearOfRegistration
+gearbox
+powerPS
+model
+kilometer
+monthOfRegistration
+fuelType
+brand
+notRepairedDamage
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 247367 entries, 0 to 247366
+Columns: 350 entries, vehicleType-andere to price
+dtypes: int64(1), uint8(349)
+memory usage: 84.2 MB
+
+hash str to number
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 247367 entries, 0 to 247366
+Data columns (total 11 columns):
+price                  247367 non-null float64
+vehicleType            247367 non-null float64
+yearOfRegistration     247367 non-null float64
+gearbox                247367 non-null float64
+powerPS                247367 non-null float64
+model                  247367 non-null float64
+kilometer              247367 non-null float64
+monthOfRegistration    247367 non-null float64
+fuelType               247367 non-null float64
+brand                  247367 non-null float64
+notRepairedDamage      247367 non-null float64
+dtypes: float64(11)
+memory usage: 20.8 MB
+
+RandomForestClassifier-onehot
+ discretizing price every 1000
+  biggest price group in training set
+   biggest group: (size,value) = (27980, 1.0)  rate =   0.162
+  biggest price group in testing  set
+   biggest group: (size,value) = (11991, 1.0)  rate =   0.162
+  training time: 1.6756391525268555 sec.
+  accuracy: 0.171755828056
+ discretizing price every 2000
+  biggest price group in training set
+   biggest group: (size,value) = (51474, 0.0)  rate =   0.297
+  biggest price group in testing  set
+   biggest group: (size,value) = (22060, 0.0)  rate =   0.297
+  training time: 1.5514793395996094 sec.
+  accuracy: 0.303880878588
+ discretizing price every 4000
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0.0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0.0)  rate =   0.501
+  training time: 1.544637680053711 sec.
+  accuracy: 0.4616493734
+ discretizing price every 6000
+  biggest price group in training set
+   biggest group: (size,value) = (108404, 0.0)  rate =   0.626
+  biggest price group in testing  set
+   biggest group: (size,value) = (46459, 0.0)  rate =   0.626
+  training time: 1.2894797325134277 sec.
+  accuracy: 0.561959304676
+ discretizing price every 8000
+  biggest price group in training set
+   biggest group: (size,value) = (124461, 0.0)  rate =   0.719
+  biggest price group in testing  set
+   biggest group: (size,value) = (53340, 0.0)  rate =   0.719
+  training time: 1.124260425567627 sec.
+  accuracy: 0.624134213718
+ discretizing price every 10000
+  biggest price group in training set
+   biggest group: (size,value) = (136331, 0.0)  rate =   0.787
+  biggest price group in testing  set
+   biggest group: (size,value) = (58428, 0.0)  rate =   0.787
+  training time: 1.102755069732666 sec.
+  accuracy: 0.666163589813
+ discretizing price every 12000
+  biggest price group in training set
+   biggest group: (size,value) = (143944, 0.0)  rate =   0.831
+  biggest price group in testing  set
+   biggest group: (size,value) = (61690, 0.0)  rate =   0.831
+  training time: 1.2611305713653564 sec.
+  accuracy: 0.693868750842
+ discretizing price every 14000
+  biggest price group in training set
+   biggest group: (size,value) = (150548, 0.0)  rate =   0.869
+  biggest price group in testing  set
+   biggest group: (size,value) = (64521, 0.0)  rate =   0.869
+  training time: 1.428300380706787 sec.
+  accuracy: 0.720738444954
+ discretizing price every 16000
+  biggest price group in training set
+   biggest group: (size,value) = (155711, 0.0)  rate =   0.899
+  biggest price group in testing  set
+   biggest group: (size,value) = (66733, 0.0)  rate =   0.899
+  training time: 1.0919990539550781 sec.
+  accuracy: 0.744468400485
+ discretizing price every 18000
+  biggest price group in training set
+   biggest group: (size,value) = (159603, 0.0)  rate =   0.922
+  biggest price group in testing  set
+   biggest group: (size,value) = (68401, 0.0)  rate =   0.922
+  training time: 1.0822222232818604 sec.
+  accuracy: 0.764492655976
+ discretizing price every 20000
+  biggest price group in training set
+   biggest group: (size,value) = (162573, 0.0)  rate =   0.939
+  biggest price group in testing  set
+   biggest group: (size,value) = (69674, 0.0)  rate =   0.939
+  training time: 1.1183972358703613 sec.
+  accuracy: 0.778156582671
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0)  rate =   0.501
+  training time: 1.179985761642456 sec.
+  accuracy: 0.697951758523
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (58201, 1)  rate =   0.336
+  biggest price group in testing  set
+   biggest group: (size,value) = (24942, 1)  rate =   0.336
+  training time: 1.1545677185058594 sec.
+  accuracy: 0.528823608678
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (43373, 1)  rate =   0.250
+  biggest price group in testing  set
+   biggest group: (size,value) = (18588, 1)  rate =   0.250
+  training time: 0.8515076637268066 sec.
+  accuracy: 0.445155639402
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (35074, 1)  rate =   0.203
+  biggest price group in testing  set
+   biggest group: (size,value) = (15032, 1)  rate =   0.203
+  training time: 0.7996923923492432 sec.
+  accuracy: 0.373804069532
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (30169, 0)  rate =   0.174
+  biggest price group in testing  set
+   biggest group: (size,value) = (12930, 0)  rate =   0.174
+  training time: 0.836841344833374 sec.
+  accuracy: 0.321735615146
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (25217, 0)  rate =   0.146
+  biggest price group in testing  set
+   biggest group: (size,value) = (10808, 0)  rate =   0.146
+  training time: 0.7879600524902344 sec.
+  accuracy: 0.287602748956
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (22088, 2)  rate =   0.128
+  biggest price group in testing  set
+   biggest group: (size,value) = (9466, 2)  rate =   0.128
+  training time: 0.8055567741394043 sec.
+  accuracy: 0.254642231505
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (20067, 0)  rate =   0.116
+  biggest price group in testing  set
+   biggest group: (size,value) = (8601, 0)  rate =   0.116
+  training time: 0.8759493827819824 sec.
+  accuracy: 0.229861204689
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (18252, 2)  rate =   0.105
+  biggest price group in testing  set
+   biggest group: (size,value) = (7823, 2)  rate =   0.105
+  training time: 1.031388521194458 sec.
+  accuracy: 0.211130575394
+ discretizing price via floor to MSB
+  biggest price group in training set
+   biggest group: (size,value) = (37596, 4096)  rate =   0.217
+  biggest price group in testing  set
+   biggest group: (size,value) = (16113, 4096)  rate =   0.217
+  training time: 0.8896362781524658 sec.
+  accuracy: 0.203530521493
+
+RandomForestClassifier-onehot-all
+ discretizing price every 1000
+  biggest price group in training set
+   biggest group: (size,value) = (27980, 1)  rate =   0.162
+  biggest price group in testing  set
+   biggest group: (size,value) = (11991, 1)  rate =   0.162
+  training time: 1.3715934753417969 sec.
+  accuracy: 0.252284058752
+ discretizing price every 2000
+  biggest price group in training set
+   biggest group: (size,value) = (51474, 0)  rate =   0.297
+  biggest price group in testing  set
+   biggest group: (size,value) = (22060, 0)  rate =   0.297
+  training time: 1.6580407619476318 sec.
+  accuracy: 0.410901495755
+ discretizing price every 4000
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0)  rate =   0.501
+  training time: 1.2454862594604492 sec.
+  accuracy: 0.588141759871
+ discretizing price every 6000
+  biggest price group in training set
+   biggest group: (size,value) = (108404, 0)  rate =   0.626
+  biggest price group in testing  set
+   biggest group: (size,value) = (46459, 0)  rate =   0.626
+  training time: 1.1232826709747314 sec.
+  accuracy: 0.690311278803
+ discretizing price every 8000
+  biggest price group in training set
+   biggest group: (size,value) = (124461, 0)  rate =   0.719
+  biggest price group in testing  set
+   biggest group: (size,value) = (53340, 0)  rate =   0.719
+  training time: 1.0568044185638428 sec.
+  accuracy: 0.758428783183
+ discretizing price every 10000
+  biggest price group in training set
+   biggest group: (size,value) = (136331, 0)  rate =   0.787
+  biggest price group in testing  set
+   biggest group: (size,value) = (58428, 0)  rate =   0.787
+  training time: 1.1262171268463135 sec.
+  accuracy: 0.808246866999
+ discretizing price every 12000
+  biggest price group in training set
+   biggest group: (size,value) = (143944, 0)  rate =   0.831
+  biggest price group in testing  set
+   biggest group: (size,value) = (61690, 0)  rate =   0.831
+  training time: 1.087111234664917 sec.
+  accuracy: 0.837649912411
+ discretizing price every 14000
+  biggest price group in training set
+   biggest group: (size,value) = (150548, 0)  rate =   0.869
+  biggest price group in testing  set
+   biggest group: (size,value) = (64521, 0)  rate =   0.869
+  training time: 0.935582160949707 sec.
+  accuracy: 0.863967120334
+ discretizing price every 16000
+  biggest price group in training set
+   biggest group: (size,value) = (155711, 0)  rate =   0.899
+  biggest price group in testing  set
+   biggest group: (size,value) = (66733, 0)  rate =   0.899
+  training time: 1.0040147304534912 sec.
+  accuracy: 0.883654494004
+ discretizing price every 18000
+  biggest price group in training set
+   biggest group: (size,value) = (159603, 0)  rate =   0.922
+  biggest price group in testing  set
+   biggest group: (size,value) = (68401, 0)  rate =   0.922
+  training time: 0.9267807006835938 sec.
+  accuracy: 0.90117234874
+ discretizing price every 20000
+  biggest price group in training set
+   biggest group: (size,value) = (162573, 0)  rate =   0.939
+  biggest price group in testing  set
+   biggest group: (size,value) = (69674, 0)  rate =   0.939
+  training time: 1.0607163906097412 sec.
+  accuracy: 0.915536989624
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0)  rate =   0.501
+  training time: 0.9521985054016113 sec.
+  accuracy: 0.829807303598
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (58201, 1)  rate =   0.336
+  biggest price group in testing  set
+   biggest group: (size,value) = (24942, 1)  rate =   0.336
+  training time: 0.8339090347290039 sec.
+  accuracy: 0.7
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (43373, 1)  rate =   0.250
+  biggest price group in testing  set
+   biggest group: (size,value) = (18588, 1)  rate =   0.250
+  training time: 1.1399035453796387 sec.
+  accuracy: 0.603759601132
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (35074, 1)  rate =   0.203
+  biggest price group in testing  set
+   biggest group: (size,value) = (15032, 1)  rate =   0.203
+  training time: 1.0900442600250244 sec.
+  accuracy: 0.523608678076
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (30169, 0)  rate =   0.174
+  biggest price group in testing  set
+   biggest group: (size,value) = (12930, 0)  rate =   0.174
+  training time: 1.0509397983551025 sec.
+  accuracy: 0.464843013071
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (25217, 0)  rate =   0.146
+  biggest price group in testing  set
+   biggest group: (size,value) = (10808, 0)  rate =   0.146
+  training time: 0.7801406383514404 sec.
+  accuracy: 0.416197277995
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (22088, 2)  rate =   0.128
+  biggest price group in testing  set
+   biggest group: (size,value) = (9466, 2)  rate =   0.128
+  training time: 0.7557013034820557 sec.
+  accuracy: 0.378789920496
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (20067, 0)  rate =   0.116
+  biggest price group in testing  set
+   biggest group: (size,value) = (8601, 0)  rate =   0.116
+  training time: 0.7175710201263428 sec.
+  accuracy: 0.348942191079
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (18252, 2)  rate =   0.105
+  biggest price group in testing  set
+   biggest group: (size,value) = (7823, 2)  rate =   0.105
+  training time: 0.7605891227722168 sec.
+  accuracy: 0.322840587522
+ discretizing price via floor to MSB
+  biggest price group in training set
+   biggest group: (size,value) = (37596, 4096)  rate =   0.217
+  biggest price group in testing  set
+   biggest group: (size,value) = (16113, 4096)  rate =   0.217
+  training time: 0.7742753028869629 sec.
+  accuracy: 0.428540627948
+
+RandomForestClassifier-str2num
+ discretizing price every 1000
+  biggest price group in training set
+   biggest group: (size,value) = (27980, 1.0)  rate =   0.162
+  biggest price group in testing  set
+   biggest group: (size,value) = (11991, 1.0)  rate =   0.162
+  training time: 0.6139416694641113 sec.
+  accuracy: 0.146045007411
+ discretizing price every 2000
+  biggest price group in training set
+   biggest group: (size,value) = (51474, 0.0)  rate =   0.297
+  biggest price group in testing  set
+   biggest group: (size,value) = (22060, 0.0)  rate =   0.297
+  training time: 0.5132498741149902 sec.
+  accuracy: 0.288424740601
+ discretizing price every 4000
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0.0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0.0)  rate =   0.501
+  training time: 0.34705352783203125 sec.
+  accuracy: 0.453227327853
+ discretizing price every 6000
+  biggest price group in training set
+   biggest group: (size,value) = (108404, 0.0)  rate =   0.626
+  biggest price group in testing  set
+   biggest group: (size,value) = (46459, 0.0)  rate =   0.626
+  training time: 0.20138955116271973 sec.
+  accuracy: 0.546233661232
+ discretizing price every 8000
+  biggest price group in training set
+   biggest group: (size,value) = (124461, 0.0)  rate =   0.719
+  biggest price group in testing  set
+   biggest group: (size,value) = (53340, 0.0)  rate =   0.719
+  training time: 0.18672513961791992 sec.
+  accuracy: 0.616385931815
+ discretizing price every 10000
+  biggest price group in training set
+   biggest group: (size,value) = (136331, 0.0)  rate =   0.787
+  biggest price group in testing  set
+   biggest group: (size,value) = (58428, 0.0)  rate =   0.787
+  training time: 0.13491368293762207 sec.
+  accuracy: 0.664074922517
+ discretizing price every 12000
+  biggest price group in training set
+   biggest group: (size,value) = (143944, 0.0)  rate =   0.831
+  biggest price group in testing  set
+   biggest group: (size,value) = (61690, 0.0)  rate =   0.831
+  training time: 0.1564185619354248 sec.
+  accuracy: 0.688357364237
+ discretizing price every 14000
+  biggest price group in training set
+   biggest group: (size,value) = (150548, 0.0)  rate =   0.869
+  biggest price group in testing  set
+   biggest group: (size,value) = (64521, 0.0)  rate =   0.869
+  training time: 0.12024545669555664 sec.
+  accuracy: 0.719633472578
+ discretizing price every 16000
+  biggest price group in training set
+   biggest group: (size,value) = (155711, 0.0)  rate =   0.899
+  biggest price group in testing  set
+   biggest group: (size,value) = (66733, 0.0)  rate =   0.899
+  training time: 0.12024688720703125 sec.
+  accuracy: 0.741692494273
+ discretizing price every 18000
+  biggest price group in training set
+   biggest group: (size,value) = (159603, 0.0)  rate =   0.922
+  biggest price group in testing  set
+   biggest group: (size,value) = (68401, 0.0)  rate =   0.922
+  training time: 0.10362792015075684 sec.
+  accuracy: 0.758307505727
+ discretizing price every 20000
+  biggest price group in training set
+   biggest group: (size,value) = (162573, 0.0)  rate =   0.939
+  biggest price group in testing  set
+   biggest group: (size,value) = (69674, 0.0)  rate =   0.939
+  training time: 0.07819557189941406 sec.
+  accuracy: 0.776000539011
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (86682, 0)  rate =   0.501
+  biggest price group in testing  set
+   biggest group: (size,value) = (37149, 0)  rate =   0.501
+  training time: 0.05865955352783203 sec.
+  accuracy: 0.692938957014
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (58201, 1)  rate =   0.336
+  biggest price group in testing  set
+   biggest group: (size,value) = (24942, 1)  rate =   0.336
+  training time: 0.042037010192871094 sec.
+  accuracy: 0.515024929255
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (43373, 1)  rate =   0.250
+  biggest price group in testing  set
+   biggest group: (size,value) = (18588, 1)  rate =   0.250
+  training time: 0.04985857009887695 sec.
+  accuracy: 0.432879665813
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (35074, 1)  rate =   0.203
+  biggest price group in testing  set
+   biggest group: (size,value) = (15032, 1)  rate =   0.203
+  training time: 0.07234525680541992 sec.
+  accuracy: 0.360503975205
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (30169, 0)  rate =   0.174
+  biggest price group in testing  set
+   biggest group: (size,value) = (12930, 0)  rate =   0.174
+  training time: 0.04985833168029785 sec.
+  accuracy: 0.308543323002
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (25217, 0)  rate =   0.146
+  biggest price group in testing  set
+   biggest group: (size,value) = (10808, 0)  rate =   0.146
+  training time: 0.0703885555267334 sec.
+  accuracy: 0.274127476081
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (22088, 2)  rate =   0.128
+  biggest price group in testing  set
+   biggest group: (size,value) = (9466, 2)  rate =   0.128
+  training time: 0.06549954414367676 sec.
+  accuracy: 0.241274760814
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (20067, 0)  rate =   0.116
+  biggest price group in testing  set
+   biggest group: (size,value) = (8601, 0)  rate =   0.116
+  training time: 0.10655045509338379 sec.
+  accuracy: 0.216399407088
+ discretizing price uniformSizeMapping
+  biggest price group in training set
+   biggest group: (size,value) = (18252, 2)  rate =   0.105
+  biggest price group in testing  set
+   biggest group: (size,value) = (7823, 2)  rate =   0.105
+  training time: 0.09091877937316895 sec.
+  accuracy: 0.199339711629
+ discretizing price via floor to MSB
+  biggest price group in training set
+   biggest group: (size,value) = (37596, 4096)  rate =   0.217
+  biggest price group in testing  set
+   biggest group: (size,value) = (16113, 4096)  rate =   0.217
+  training time: 0.09482884407043457 sec.
+  accuracy: 0.171971432422
+
+RandomForestRegressor-onehot
+time: 28.266446828842163
+mse: 7786897.97555
+
+RandomForestRegressor-onehot-all
+time: 38.38326025009155
+mse: 13070227.7826
+
+RandomForestRegressor-str2num
+time: 3.0922069549560547
+mse: 8367024.99022
+
+argAfterInspiredByEC
+ change 'bootstrap' of arguments (found by evolution computing) from False to True by a human being
+RandomForestRegressor-onehot-argAfterInspiredByEC
+time: 5.066019535064697
+mse: 8949910.22687
+
+RandomForestRegressor-onehot-all-argAfterInspiredByEC
+time: 4.611426830291748
+mse: 13269207.359
+
+RandomForestRegressor-str2num-argAfterInspiredByEC
+time: 1.3315138816833496
+mse: 8085984.9479
+

@@ -1,0 +1,24 @@
+﻿NB的實驗說明
+選用NB之理由：
+	比較用
+	model本身沒甚麼參數可以調，很懶很方便
+流程：
+	0. 字串轉換為數字，方法有
+		a. 直接將字串feature轉為實數
+		b. one hot encoding
+			- BernoulliNB時
+				yearOfRegistration每20年1組
+				powerPS依大小分成群組大小相同的10個
+				然後所有數值資料轉為字串，進行one hot encoding
+	1. 切資料(train:test=7:3)
+		依target value排序後，每10筆資料依照
+		train, test, train, train, test, train, train, test, train, train
+		之順序依序分割
+	2. 將target value離散化，方法有：
+		a. 取固定數值為區間做分割
+		b. 取固定分類數做每個類別相同大小的分割
+		c. 取floor到most significant bit (2的冪次) - 因為是人出價，兩個大數字中，差了10%也不太有感覺，例如 "價格1萬"對比"價格1萬1千" 和 "價格1千萬"對比"價格1千1百萬"。然而從結果來看，"價格1萬"對比"價格1萬5千"顯然是有差的，但選用2的冪次會將其規為同一類，分類效果不彰
+	3. 丟進模型，模型有：
+		a. MultinomialNB
+		b. BernoulliNB, 不含0a
+
